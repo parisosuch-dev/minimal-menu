@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Montserrat } from 'next/font/google'
+import { ThemeProvider } from '@/components/theme-provider'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -25,7 +26,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${mont.variable}`}>{children}</body>
+      <body className={`${inter.variable} ${mont.variable}`}>
+        <ThemeProvider attribute='class' defaultTheme='light' enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
