@@ -1,10 +1,10 @@
-import DarkModeToggle from '@/components/DarkModeToggle';
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
-    <div>
-      Home page
-      <DarkModeToggle />
+    <div className='min-h-screen'>
+      <Header isAuth={true} />
+      Home page.
     </div>
   )
 }
